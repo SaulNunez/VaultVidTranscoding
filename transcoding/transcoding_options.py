@@ -1,10 +1,9 @@
-from typing import List
-
+from typing import Dict
 from transcoding.models import TranscodingInformation
 
 
-options: List[TranscodingInformation] = [
-    {
+transcode_options: Dict[str, TranscodingInformation] = {
+    '360p': {
         'scaling': '360:-1',
         'options': {
             'c:v': 'libx264',
@@ -16,7 +15,7 @@ options: List[TranscodingInformation] = [
         'two_pass': False,
         'options_second_pass': {}
     },
-    {
+    '480p': {
         'scaling': '480:-1',
         'options': {
             'c:v': 'libx264',
@@ -28,7 +27,7 @@ options: List[TranscodingInformation] = [
         'two_pass': False,
         'options_second_pass': {}
     },
-    {
+    '720p': {
         'scaling': '720:-1',
         'options': {
             'c:v': 'libx264',
@@ -40,7 +39,7 @@ options: List[TranscodingInformation] = [
         'two_pass': False,
         'options_second_pass': {}
     },
-    {
+    '1080p': {
         'scaling': '1080:-1',
         'options': {
             'c:v': 'libx264',
@@ -52,7 +51,7 @@ options: List[TranscodingInformation] = [
         'two_pass': False,
         'options_second_pass': {}
     },
-    {
+    '1080p_modern': {
         'scaling': '1080:-1',
         'options': {
             'c:v': 'libvpx-vp9',
@@ -69,4 +68,4 @@ options: List[TranscodingInformation] = [
             'c:a': 'libopus',
         }
     }
-]
+}
